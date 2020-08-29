@@ -9,9 +9,9 @@ fun I decided to start from the beginning and keep going until I reached the
 page where I had started.
 
 When I was finished, I had a list of interesting last names that were mostly
-alphabetical. The problem was that my list starts somehere near the middle of
-the alphabet, reaches the end, and then starts from the beginning of the
-alphabet. In other words, my list of names is sorted, but it is "rotated."
+alphabetical. The problem was that my list started somehere near the middle of
+the alphabet, reached the end, and then started from the beginning of the
+alphabet. In other words, my list of names was sorted, but it was "rotated."
 
 Example:
 
@@ -29,9 +29,9 @@ surnames = [
     'kennedy',
 ]
 
-Write a function that finds the index of the "rotation point". The "rotation
+Write a function that finds the index of the "rotation point." The "rotation
 point" is where I started working from the beginning of the phone book. The
-list I came up was absolutely huge, so make sure your solution is efficient.
+list I came up with was absolutely huge, so make sure your solution is efficient.
 
 *Note: you should be able to come up with a solution that has O(log n) time
 complexity.*
