@@ -24,6 +24,20 @@ containsTypo(3) -> False
 containsTypo(5) -> True
 containsTypo(4) -> True
 """
-def firstDraftWithTypo(n):
+def firstDraftWithTypo(drafts):
     # Your code here
+    left = 0
+    right = len(drafts) - 1
 
+    while left < right:
+        mid = ((right - left) // 2) + left
+
+        if containsTypo(mid):
+            # we can eliminate every draft after this draft, but not this draft since it might be the first draft with the typo
+            right = mid
+        else:
+            # we can elimate every draft before this draft but not this draft itself since it might be te last draft without a typo
+            left = mid
+        
+        if left + 1 == right:
+            return right

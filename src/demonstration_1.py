@@ -36,6 +36,48 @@ list I came up was absolutely huge, so make sure your solution is efficient.
 *Note: you should be able to come up with a solution that has O(log n) time
 complexity.*
 """
-def find_rotation_point(surnames):
+
+
+def find_rotation_point(surnames: List[str]) -> int:
     # Your code here
+
+    # Worst Case runtime is O(n) since we are doing a linear pass thorough our list of names
+
+    # Idea 1 -> Iterate through list of names
+        # Check names 2 at a time
+        # If we see the second name doesn't come after the first name in alpha ordering
+            # Thats our rotation point, return index
+    # This plan doesn't take advantage of the fact the input is sorted
+
+    # Idea 2 -> How can we take advantage that the data is sorted?
+    # Binary search: if you're tasked with searching through sorted data, you should always consider it
+    # To denote the boundaries of our search space, we'll have two variables, left and right
+
+    left = 0
+    right = len(surnames) - 1
+
+    # loop so long as left < right
+    while left < right:
+
+        # Get the midpoint of the current search space
+        mid = ((right - left) // 2) + left
+
+        # Check the midpoint element against the first element in the search space
+        # if the midpoint element is greater than the first element
+        if surnames[mid] > surnames[left]:
+            # Go right
+            left = mid 
+    
+        # else 
+        else:
+            # Go left
+            # When we go left, we can't eliminate the midpoint element itself, since it might be the rotation point
+            right = mid
+        # check if left and right are next to each other
+        if left + 1 == right:
+
+            # return right index
+            return right
+        
+
 
